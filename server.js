@@ -51,6 +51,7 @@ app.get('/api/news', async (req, res) => {
         }
         // --- 转换结束 ---
 
+        res.setHeader('Cache-Control', 'no-store');
         res.json(data);
     } catch (error) {
         console.error('代理服务器错误:', error);
